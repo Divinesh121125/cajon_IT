@@ -1,0 +1,271 @@
+﻿/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto',sans-serif;
+    line-height: 1.6;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header */
+header {
+    background-color: #1a73e8;
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+    header .logo {
+        display: inline-block;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    header nav {
+        display: inline-block;
+        float: right;
+    }
+
+        header nav ul {
+            list-style: none;
+        }
+
+            header nav ul li {
+                display: inline-block;
+                margin-left: 20px;
+            }
+
+                header nav ul li a {
+                    color: white;
+                    text-decoration: none;
+                    font-weight: 500;
+                    transition: 0.3s;
+                }
+
+                    header nav ul li a:hover {
+                        text-decoration: underline;
+                    }
+
+/* Hero */
+.hero {
+    background: linear-gradient(to right, #1a73e8, #5e5e5e);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+    .hero h2 {
+        font-size: 42px;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+/* Buttons */
+.btn {
+    background-color: #fff;
+    color: #1a73e8;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+    .btn:hover {
+        background-color: #e0e0e0;
+    }
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.services, .projects, .testimonials {
+    background-color: #f5f5f5;
+}
+
+.about, .contact {
+    background-color: #e0e0e0;
+}
+
+/* Cards */
+.service-cards, .project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card, .project-card {
+    background-color: white;
+    padding: 25px;
+    width: 250px;
+    border-radius: 10px;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+    .card:hover, .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+/* Contact Form */
+.contact form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input, .contact textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.contact textarea {
+    resize: vertical;
+}
+
+.form-response {
+    color: green;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #1a73e8;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Sticky CTA */
+.sticky-cta {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1a73e8;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 999;
+    transition: 0.3s;
+}
+
+    .sticky-cta:hover {
+        background-color: #155ab6;
+        transform: translateY(-3px);
+    }
+
+/* Testimonials */
+.testimonials .testimonial-container {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.testimonial-slide {
+    display: none;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+    .testimonial-slide.show {
+        display: block;
+        animation: fade 1s ease-in-out;
+    }
+
+    .testimonial-slide p {
+        font-size: 18px;
+        font-style: italic;
+        margin-bottom: 15px;
+    }
+
+    .testimonial-slide h4 {
+        font-size: 16px;
+        font-weight: bold;
+        color: #1a73e8;
+    }
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease-in-out;
+}
+
+    .fade-in.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s ease-out;
+}
+
+    .slide-up.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+/* Responsive */
+@media(max-width:768px) {
+    .service-cards, .project-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav {
+        float: none;
+        margin-top: 10px;
+    }
+
+        header nav ul li {
+            display: block;
+            margin: 10px 0;
+        }
+}
